@@ -1,6 +1,6 @@
 import './style.css'
 import PrimeVue from 'primevue/config';
-import Aura from './assets/Aura'; 
+import theme from '@primevue/themes/aura'
 
 import { createApp } from 'vue';
 import { createRouter, createWebHistory } from 'vue-router';
@@ -34,7 +34,7 @@ const routes = [
     { path: '/workshop', component: workshop },
     { path: '/registration', component: registration },
     { path: '/contactUs', component: contactus },
-    { path: '/committee/:id', committee},
+    { path: '/committee', component: committee},
     {path: '/:pathMatch(.*)*', component: e404},
 ];
 
@@ -46,7 +46,14 @@ const router = createRouter({
 const App = createApp(app)
 App.use(router).mount("#app");
 
-App.use(PrimeVue, {
-    unstyled: true,
-    pt: Aura
-});
+App.use(PrimeVue,{
+    // Default theme configuration
+    theme: {
+        preset: theme,
+        options: {
+            prefix: 'p',
+            darkModeSelector: 'false',
+            cssLayer: false
+        }
+    }
+ });
