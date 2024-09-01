@@ -1,0 +1,44 @@
+import './style.css'
+
+import { createApp } from 'vue';
+import { createRouter, createWebHistory } from 'vue-router';
+
+//app vue
+import app from './App.vue';
+
+//imports
+import home from './views/home.vue'
+import about from './views/about.vue'
+import forauth from './views/forauth.vue'
+import schedule from './views/schedule.vue'
+import speakers from './views/speakers.vue'
+import workshop from './views/workshop.vue'
+import registration from './views/registration.vue'
+import contactus from './views/contactus.vue'
+import committee from './views/committee.vue'
+import callforpaper from './views/callforpaper.vue'
+import CRC from './views/crc.vue'
+import e404 from './views/e404.vue'
+
+const routes = [
+    { path: '/', component: home },
+    { path: '/about', component: about },
+    { path: '/authors', component: forauth, children: [
+        { path: 'callforpaper', component: callforpaper },
+        { path: 'CRC', component: CRC }
+    ]},
+    { path: '/schedule', component: schedule },
+    { path: '/speakers', component: speakers },
+    { path: '/workshop', component: workshop },
+    { path: '/registration', component: registration },
+    { path: '/contactUs', component: contactus },
+    { path: '/committee/:id', committee},
+    {path: '/:pathMatch(.*)*', component: e404},
+];
+
+const router = createRouter({
+    history: createWebHistory(),
+    routes,
+})
+
+createApp(app).use(router).mount("#app");
