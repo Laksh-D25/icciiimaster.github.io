@@ -1,7 +1,7 @@
 <template>
     <navbar/>
         <RouterView />
-    <cust_footer class=""/>
+    <cust_footer/>
 </template>
 
 <script setup>

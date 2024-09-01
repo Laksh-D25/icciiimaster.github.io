@@ -1,5 +1,5 @@
 <template>
-    <Disclosure as="nav" class="bg-white shadow-md sticky top-0 w-full" v-slot="{ open }">
+    <Disclosure as="nav" class="bg-white shadow-md sticky top-0 w-full z-40" v-slot="{ open }">
     <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-6">
         <div class="relative flex h-16 lg:justify-around justify-center">
             <div class="absolute inset-y-0 right-0 flex items-center lg:hidden">
@@ -31,8 +31,8 @@
                             <transition enter-active-class="transition ease-out duration-100" enter-from-class="transform opacity-0 scale-95" enter-to-class="transform opacity-100 scale-100" leave-active-class="transition ease-in duration-75" leave-from-class="transform opacity-100 scale-100" leave-to-class="transform opacity-0 scale-95">
                             <MenuItems class="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                                     <div class="py-1">
-                                    <MenuItem v-slot="{ active }">
-                                        <a href="#" :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700', 'block px-4 py-2 text-sm']">Account settings</a>
+                                    <MenuItem v-for="child in navs.children"  v-slot="{ active }">
+                                        <a href="#" :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700', 'block px-4 py-2 text-sm']">{{ child.name }}</a>
                                     </MenuItem>
                                     </div>
                             </MenuItems>
@@ -74,13 +74,29 @@ const ieeepng =  './img/ieee.png'
 const navigation = [
     { name: 'Home', href: '/', type: 'link' },
     { name: 'About', href: '/about', type: 'link' },
-    { name: 'Committee', href: '/committee', type: 'dropdown' },
-    { name: 'For Authors', href: '/forauthors', type: 'dropdown' },
+    { name: 'Committee', href: '/committee', type: 'dropdown', children: [
+        { name: 'Advisory Committee', href: '/', type: 'link' },
+        { name: 'Chief Patrons', href: '/', type: 'link' },
+        { name: 'Finance Committee', href: '/', type: 'link' },
+        { name: 'General Chairs', href: '/', type: 'link' },
+        { name: 'Honorary Chairs', href: '/', type: 'link' },
+        { name: 'Logistics And Hospitality', href: '/', type: 'link' },
+        { name: 'Patrons', href: '/', type: 'link' },
+        { name: 'Publications Committee', href: '/', type: 'link' },
+        { name: 'Publicity Committee', href: '/', type: 'link' },
+        { name: 'Sessions Management', href: '/', type: 'link' },
+        { name: 'Student Branch', href: '/', type: 'link' },
+        { name: 'Student Chapter', href: '/', type: 'link' },
+        { name: 'Student Volunteers', href: '/', type: 'link' },
+        { name: 'Technical Program Committee', href: '/', type: 'link' },
+    ]},
+    { name: 'For Authors', href: '/forauthors', type: 'dropdown', children: [
+        { name: 'CRC', href: '/', type: 'link' },
+    ] },
     { name: 'Schedule', href: '/schedule', type: 'link' },
     { name: 'Speakers', href: '/speakers', type: 'link' },
     { name: 'Registration', href: '/registration', type: 'link' },
     { name: 'Workshop', href: '/workshop', type: 'link' },
     { name: 'Contact', href: '/contact', type: 'link' },
-
 ]
 </script>

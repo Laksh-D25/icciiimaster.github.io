@@ -35,7 +35,7 @@
                     <div class="pi pi-map-marker pr-2"></div>Bangalore Yeshwanthpur Campus, Nagasandra, Near Tumkur Road, Bangalore, Karnataka-560073
                   </li>
                   <li class="text-sm leading-6 text-gray-300">
-                    <div class="pi pi-envelope pr-2"></div><a href="ieee.yeshwanthpur@christuniversity.in" class="hover:text-white">ieee.yeshwanthpur@christuniversity.in</a>
+                    <div class="pi pi-envelope pr-2"></div><a href="ieee.yeshwanthpur@christuniversity.in" class="hover:text-white">ieee.yeshwanthpur<br class="sm:hidden">@christuniversity.in</a>
                   </li>
                   <li class="text-sm leading-6 text-gray-300">
                     <div class="pi pi-mobile pr-2"></div>080 6989 6666
