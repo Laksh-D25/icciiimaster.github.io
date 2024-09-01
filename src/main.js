@@ -34,7 +34,7 @@ const routes = [
     { path: '/workshop', component: workshop },
     { path: '/registration', component: registration },
     { path: '/contactUs', component: contactus },
-    { path: '/committee', component: committee},
+    { path: '/committee/:id', component: committee, props: true},
     {path: '/:pathMatch(.*)*', component: e404},
 ];
 

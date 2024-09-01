@@ -13,8 +13,8 @@
             </div>
             <div class="flex flex-1 items-center lg:justify-between">
                 <div class="flex flex-shrink-0 items-center">
-                    <img class="xl:h-10 lg:h-6 h-8 w-auto mr-7" :src="christpng" alt="CHRIST LOGO" />
-                    <img class="xl:h-9 lg:h-5 h-7 w-auto" :src="ieeepng" alt="IEEE LOGO" />
+                    <img class="xl:h-10 lg:h-6 h-8 w-auto mr-7" src="/img/christ.png" alt="CHRIST LOGO" />
+                    <img class="xl:h-9 lg:h-5 h-7 w-auto" src="/img/ieee.png" alt="IEEE LOGO" />
                 </div>
                 <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
                     <div v-for="navs in navigation" class="inline-flex items-center justify-center">
@@ -32,7 +32,7 @@
                             <MenuItems class="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                                     <div class="py-1">
                                     <MenuItem v-for="child in navs.children"  v-slot="{ active }">
-                                        <a href="#" :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700', 'block px-4 py-2 text-sm']">{{ child.name }}</a>
+                                        <a :href="child.href" :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700', 'block px-4 py-2 text-sm']">{{ child.name }}</a>
                                     </MenuItem>
                                     </div>
                             </MenuItems>
@@ -54,8 +54,8 @@
                     {{ navs.name }}
                     <ChevronDownIcon :class="[open ? 'rotate-180' : '', 'h-5 w-5 flex-none']" aria-hidden="true" />
                 </DisclosureButton>
-                <DisclosurePanel class="mt-2 space-y-2">
-                    <DisclosureButton class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50">Name</DisclosureButton>
+                <DisclosurePanel v-for="child in navs.children" class="mt-2 space-y-2">
+                    <DisclosureButton class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50" as="a" :href="child.href">{{ child.name }}</DisclosureButton>
                 </DisclosurePanel>
                 </Disclosure>
             </div>
@@ -75,20 +75,21 @@ const navigation = [
     { name: 'Home', href: '/', type: 'link' },
     { name: 'About', href: '/about', type: 'link' },
     { name: 'Committee', href: '/committee', type: 'dropdown', children: [
-        { name: 'Advisory Committee', href: '/', type: 'link' },
-        { name: 'Chief Patrons', href: '/', type: 'link' },
-        { name: 'Finance Committee', href: '/', type: 'link' },
-        { name: 'General Chairs', href: '/', type: 'link' },
-        { name: 'Honorary Chairs', href: '/', type: 'link' },
-        { name: 'Logistics And Hospitality', href: '/', type: 'link' },
-        { name: 'Patrons', href: '/', type: 'link' },
-        { name: 'Publications Committee', href: '/', type: 'link' },
-        { name: 'Publicity Committee', href: '/', type: 'link' },
-        { name: 'Sessions Management', href: '/', type: 'link' },
-        { name: 'Student Branch', href: '/', type: 'link' },
-        { name: 'Student Chapter', href: '/', type: 'link' },
-        { name: 'Student Volunteers', href: '/', type: 'link' },
-        { name: 'Technical Program Committee', href: '/', type: 'link' },
+        { name: 'Advisory Committee', href: '/committee/0', type: 'link' },
+        { name: 'Chief Patrons', href: '/committee/1', type: 'link' },
+        { name: 'Finance Committee', href: '/committee/2', type: 'link' },
+        { name: 'General Chairs', href: '/committee/3', type: 'link' },
+        { name: 'Honorary Chairs', href: '/committee/4', type: 'link' },
+        { name: 'Logistics And Hospitality', href: '/committee/5', type: 'link' },
+        { name: 'Organizing Committee', href: '/committee/6', type: 'link' },
+        { name: 'Patrons', href: '/committee/7', type: 'link' },
+        { name: 'Publications Committee', href: 'committee/8', type: 'link' },
+        { name: 'Publicity Committee', href: '/committee/9', type: 'link' },
+        { name: 'Sessions Management', href: '/committee/10', type: 'link' },
+        { name: 'Student Branch', href: '/committee/11', type: 'link' },
+        { name: 'Student Chapter', href: '/committee/12', type: 'link' },
+        { name: 'Student Volunteers', href: '/committee/13', type: 'link' },
+        { name: 'Technical Program Committee', href: '/committee/14', type: 'link' },
     ]},
     { name: 'For Authors', href: '/forauthors', type: 'dropdown', children: [
         { name: 'CRC', href: '/', type: 'link' },

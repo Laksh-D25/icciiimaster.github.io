@@ -5,7 +5,7 @@
         <div class="xl:grid xl:grid-cols-3 xl:gap-8">
           <div class="space-y-8">
             <div class = "grid sm:justify-items-center justify-items-center xs:justify-items-center md:justify-items-center lg:justify-items-center xl:justify-items-start 2xl:justify-items-start ">
-              <div><img class="h-16" :src="christpng" alt="Company name"/></div>
+              <div><img class="h-16" src="/img/christWhite.webp" alt="Company name"/></div>
             </div>
             <p class="text-sm leading-6 text-gray-300 text-center xl:text-justify">
               ICCIII MASTER is a conference focused on innovations in computational technologies, intelligence systems, and sustainable technologies. It brings together experts to share research and collaborate.</p>
@@ -57,7 +57,6 @@
   
   <script setup>
   import { defineComponent, h } from 'vue'
-  const christpng = './img/christWhite.webp'
   
   const navigation = {
     company: [
@@ -73,17 +72,17 @@
       {
         name: 'Linkedin',
         href: '#',
-        link: './img/linkedin.svg',
+        link: '/img/linkedin.svg',
       },
       {
         name: 'Facebook',
         href: '#',
-        link: './img/facebook.svg',
+        link: '/img/facebook.svg',
       },
       {
         name: 'WhatsApp',
         href: '#',
-        link: './img/whatsapp.svg',
+        link: '/img/whatsapp.svg',
       }
     ],
   }
