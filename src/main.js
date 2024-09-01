@@ -1,4 +1,6 @@
 import './style.css'
+import PrimeVue from 'primevue/config';
+import Aura from './assets/Aura'; 
 
 import { createApp } from 'vue';
 import { createRouter, createWebHistory } from 'vue-router';
@@ -41,4 +43,10 @@ const router = createRouter({
     routes,
 })
 
-createApp(app).use(router).mount("#app");
+const App = createApp(app)
+App.use(router).mount("#app");
+
+App.use(PrimeVue, {
+    unstyled: true,
+    pt: Aura
+});

@@ -2,10 +2,11 @@
 export default {
   content: [
     "./index.html",
-    "./src/**/*.{vue,js,ts,jsx,tsx}",],
+    "./src/**/*.{vue,js,ts,jsx,tsx}",
+    "./presets/**/*.{js,vue,ts}"],
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [require('tailwindcss-primeui')],
 }
 
