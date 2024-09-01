@@ -1,8 +1,8 @@
 <template>
     <h1 class="text-3xl sm:text-5xl text-center font-bold my-10">
-           Registration
+        Registration
     </h1>
-    <div class="overflow-x-auto">
+    <div class="overflow-x-auto flex w-full justify-center mb-5">
         <table class="min-w-3/4 border-collapse border border-gray-300">
             <thead>
                 <tr class="bg-gray-100">
