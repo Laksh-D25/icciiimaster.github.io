@@ -1,8 +1,8 @@
 <template>
-    <Disclosure as="nav" class="bg-white shadow-md sticky top-0 w-full z-40" v-slot="{ open }">
+    <Disclosure as="nav" class="bg-white shadow-md sticky top-0 w-full z-40" v-slot="{ open }" style="z-index: 2000;">
     <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-6">
         <div class="relative flex h-16 lg:justify-around justify-center">
-            <div class="absolute inset-y-0 right-0 flex items-center lg:hidden">
+            <div class="absolute inset-y-0 right-0 flex items-center xl:hidden">
                 <!-- Mobile menu button -->
                 <DisclosureButton class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500">
                 <span class="absolute -inset-0.5" />
@@ -11,18 +11,18 @@
                 <XMarkIcon v-else class="block h-6 w-6" aria-hidden="true" />
                 </DisclosureButton>
             </div>
-            <div class="flex flex-1 items-center lg:justify-between">
+            <div class="flex flex-1 items-center xl:justify-between">
                 <div class="flex flex-shrink-0 items-center">
                     <img class="xl:h-10 lg:h-6 h-8 w-auto mr-7" src="/img/christ.png" alt="CHRIST LOGO" />
                     <img class="xl:h-9 lg:h-5 h-7 w-auto" src="/img/ieee.png" alt="IEEE LOGO" />
                 </div>
-                <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                <div class="hidden sm:ml-6 xl:flex sm:space-x-8">
                     <div v-for="navs in navigation" class="inline-flex items-center justify-center">
-                        <a v-if="navs.type == 'link'" :href="navs.href" class="py-1 px-2 hover:bg-gray-300 rounded-md xl:text-sm text-[0.6rem] font-semibold text-gray-900 inline-flex w-full justify-center"> {{ navs.name }}</a>
+                        <a v-if="navs.type == 'link'" :href="navs.href" class="py-1 px-2  rounded-md xl:text-sm text-[0.6rem] font-semibold text-gray-900 inline-flex w-full justify-center"> {{ navs.name }}</a>
 
                         <Menu as="div" class="relative inline-block" v-else-if="navs.type == 'dropdown'" >
                             <div>
-                            <MenuButton class="inline-flex w-full justify-center py-1 px-2 hover:bg-gray-300 items-center rounded-md bg-white xl:text-sm text-[0.6rem] font-semibold text-gray-900 ">
+                            <MenuButton class="inline-flex w-full justify-center py-1 px-2  items-center rounded-md bg-white xl:text-sm text-[0.6rem] font-semibold text-gray-900 ">
                                 {{ navs.name }}
                                 <ChevronDownIcon class="text-gray-900 mt-1 h-4 w-4" aria-hidden="true" />
                             </MenuButton>
@@ -44,7 +44,7 @@
         </div>
     </div>
 
-    <DisclosurePanel class="sm:hidden">
+    <DisclosurePanel class="xl:hidden">
         <div class="space-y-1 pb-4 pt-2">
             <div v-for="navs in navigation">
                 <DisclosureButton v-if="navs.type == 'link'" as="a" :href="navs.href" class="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">{{ navs.name }}</DisclosureButton>
