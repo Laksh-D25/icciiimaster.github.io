@@ -1,5 +1,5 @@
 <template>
-    <div class="absolute grid xl:grid-cols-3 xl:grid-rows-1 grid-cols-1 grid-rows-2 text-white w-full h-100 xl:mt-[5%] lg:mt-[10%] md:mt-[10%]" style="z-index: 1000;">
+    <div class="absolute grid xl:grid-cols-3 xl:grid-rows-1 grid-cols-1 grid-rows-2 text-white w-full h-100 xl:mt-[5%] lg:mt-[10%] md:mt-[10%] z-20">
         <div class="flex px-3 items-center justify-center h-full row-span-1">
             <img :src="logo" alt="CONFERENCE LOGO" class="hidden xl:block" />
             <img :src="logo" alt="CONFERENCE LOGO" class="h-30 w-30 block xl:hidden" style="@media screen and (max-width: 1020px) {

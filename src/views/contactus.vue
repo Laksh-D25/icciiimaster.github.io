@@ -5,21 +5,21 @@
     <div class="grid xl:grid-cols-2 grid-rows-2 xl:grid-rows-none m-5">
         <div class="xl:mx-5">
           <div class="bg-white p-4 shadow-md rounded-lg w-full">
-                        <form action="/action_page.php">
+                        <form action="https://script.google.com/macros/s/AKfycbwADEV5aGXzrfzgaK2HtOxpur2LvMtSjyA4LQoHtvlAp1-0hajSqSXWlTfiwaRMBowr/exec" method="post" @submit.prevent="postContactUs($event)">
                             <div class="mb-4">
                                 <label for="name" class="block text-gray-700">Name:</label>
-                                <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" id="name" placeholder="Enter your Name" name="name">
+                                <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" id="Name" placeholder="Enter your Name" name="Name">
                             </div>
                             <div class="mb-4">
                                 <label for="email" class="block text-gray-700">Email:</label>
-                                <input type="email" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" id="email" placeholder="Enter email" name="email">
+                                <input type="email" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" id="Email" placeholder="Enter email" name="Email">
                             </div>
                             <div class="mb-4">
                                 <label for="message" class="block text-gray-700">Your Message:</label>
-                                <textarea class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" id="message" placeholder="Your Message Here" name="message"></textarea>
+                                <textarea class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" id="Message" placeholder="Your Message Here" name="Message"></textarea>
                             </div>
                             <div class="text-center mt-5">
-                                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Submit</button>
+                                <button type="submit" class="flex-none rounded-md bg-blue-900 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-900">Submit</button>
                             </div>
                         </form>
                     </div>
@@ -40,9 +40,23 @@
         </div>
         
     </div>
-
+<Toast/>
 </template>
 
 <script setup>
+import axios from 'axios'
+import { useToast } from 'primevue/usetoast';
+import Toast from 'primevue/toast';
+const toast = useToast();
 
+    function postContactUs(e){
+        const formData = new FormData(e.target)
+        axios.post("https://script.google.com/macros/s/AKfycbwADEV5aGXzrfzgaK2HtOxpur2LvMtSjyA4LQoHtvlAp1-0hajSqSXWlTfiwaRMBowr/exec", formData).then(res => {
+            if (res.data.result == "success")
+                toast.add({ severity: 'success', summary: 'Success', detail: 'We Will Get Back To You Shortly', life: 3000 });
+        }).catch(err => {
+            console.log(err)
+            toast.add({ severity: 'error', summary: 'Error', detail: 'Please Try Again Later', life: 3000 });
+        })
+    }
 </script>

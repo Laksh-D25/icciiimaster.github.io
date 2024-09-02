@@ -1,5 +1,5 @@
 <template>
-    <Disclosure as="nav" class="bg-white shadow-md sticky top-0 w-full z-40" v-slot="{ open }" style="z-index: 2000;">
+    <Disclosure as="nav" class="bg-white shadow-md sticky top-0 w-full z-40" v-slot="{ open }">
     <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-6">
         <div class="relative flex h-16 lg:justify-around justify-center">
             <div class="absolute inset-y-0 right-0 flex items-center xl:hidden">

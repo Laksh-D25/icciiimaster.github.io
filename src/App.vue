@@ -1,6 +1,8 @@
 <template>
     <navbar/>
-        <RouterView />
+        <div class="z-0">
+            <RouterView/>
+        </div>
     <cust_footer/>
 </template>
 

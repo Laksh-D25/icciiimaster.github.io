@@ -5,6 +5,8 @@ import theme from '@primevue/themes/aura'
 import { createApp } from 'vue';
 import { createRouter, createWebHistory } from 'vue-router';
 
+import ToastService from 'primevue/toastservice';
+
 //app vue
 import app from './App.vue';
 
@@ -57,3 +59,5 @@ App.use(PrimeVue,{
         }
     }
  });
+
+ App.use(ToastService);
