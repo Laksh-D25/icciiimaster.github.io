@@ -4,7 +4,7 @@
     </h1>
     <div class="grid xl:grid-cols-2 grid-rows-2 xl:grid-rows-none m-5">
         <div class="xl:mx-5">
-          <div class="bg-white p-4 shadow-md rounded-lg w-full">
+          <div class="bg-white p-4 shadow-md rounded-lg w-full h-[350px]" v-if="!loading">
                         <form action="https://script.google.com/macros/s/AKfycbwADEV5aGXzrfzgaK2HtOxpur2LvMtSjyA4LQoHtvlAp1-0hajSqSXWlTfiwaRMBowr/exec" method="post" @submit.prevent="postContactUs($event)">
                             <div class="mb-4">
                                 <label for="name" class="block text-gray-700">Name:</label>
@@ -23,6 +23,9 @@
                             </div>
                         </form>
                     </div>
+                    <div v-else class="bg-white p-4 shadow-md rounded-lg w-full h-[350px] flex justify-center items-center">
+                        <ProgressSpinner></ProgressSpinner>
+                    </div>
         </div>
         
         <div class="xl:mr-5">
@@ -33,7 +36,7 @@
                             allowfullscreen 
                             loading="lazy" 
                             referrerpolicy="no-referrer-when-downgrade" 
-                            class="w-full h-[350px]  rounded-lg">
+                            class="w-full h-[350px] rounded-lg ">
                         </iframe>
                     </div>
                 </div>
@@ -47,16 +50,26 @@
 import axios from 'axios'
 import { useToast } from 'primevue/usetoast';
 import Toast from 'primevue/toast';
+import ProgressSpinner from 'primevue/progressspinner';
+import { ref } from 'vue';
+
+const loading = ref(false)
+
 const toast = useToast();
 
-    function postContactUs(e){
-        const formData = new FormData(e.target)
-        axios.post("https://script.google.com/macros/s/AKfycbwADEV5aGXzrfzgaK2HtOxpur2LvMtSjyA4LQoHtvlAp1-0hajSqSXWlTfiwaRMBowr/exec", formData).then(res => {
-            if (res.data.result == "success")
-                toast.add({ severity: 'success', summary: 'Success', detail: 'We Will Get Back To You Shortly', life: 3000 });
+function postContactUs(e){
+    loading.value = true
+    const formData = new FormData(e.target)
+
+    axios.post("https://script.google.com/macros/s/AKfycbwADEV5aGXzrfzgaK2HtOxpur2LvMtSjyA4LQoHtvlAp1-0hajSqSXWlTfiwaRMBowr/exec", formData).then(res => {
+        if (res.data.result == "success")
+            toast.add({ severity: 'success', summary: 'Success', detail: 'We Will Get Back To You Shortly', life: 3000 });
+            e.target.reset();
         }).catch(err => {
             console.log(err)
             toast.add({ severity: 'error', summary: 'Error', detail: 'Please Try Again Later', life: 3000 });
+        }).finally(() => {
+            loading.value = false
         })
     }
 </script>

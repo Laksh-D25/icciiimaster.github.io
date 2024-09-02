@@ -2,7 +2,7 @@
     <h1 class="text-3xl sm:text-5xl text-center font-bold my-10">
         Registration
     </h1>
-    <div class="overflow-x-auto flex w-full justify-center mb-5">
+    <div class="sm:flex hidden overflow-x-auto flex w-full justify-center mb-5">
         <table class="min-w-3/4 border-collapse border border-gray-300">
             <thead>
                 <tr class="bg-gray-100">
@@ -69,9 +69,232 @@
                 </tr>
             </tbody>
         </table>
+        <br>
     </div>
+    <div class="sm:hidden mx-2">
+        <Accordion value="0">
+            <AccordionPanel value="0">
+                <AccordionHeader>IEEE Student Member</AccordionHeader>
+                <AccordionContent>
+                    <p class="m-0">
+                        <p class="text-gray-600 mb-4">This category is for students who are current members of the IEEE. It offers a discounted registration fee for attending the conference.</p>
+                        <div>
+                            <strong class="text-gray-800">Pricing:</strong>
+                            <ul class="list-disc list-inside text-gray-600">
+                                <li><strong>Early Bird:</strong>
+                                    <ul class="ml-4">
+                                        <li>Indian Delegates: ₹6000</li>
+                                        <li>International Delegates: $100</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Regular:</strong>
+                                    <ul class="ml-4">
+                                        <li>Indian Delegates: ₹6400</li>
+                                        <li>International Delegates: $125</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </p>
+                </AccordionContent>
+            </AccordionPanel>
+            <AccordionPanel value="1">
+                <AccordionHeader>Non-IEEE Student Member</AccordionHeader>
+                <AccordionContent>
+                    <p class="m-0">
+                        <p class="text-gray-600 mb-4">This category is designed for students who are not members of the IEEE. Non-member students can still register for the conference but at a slightly higher fee than IEEE student members.</p>
+                        <div>
+                            <strong class="text-gray-800">Pricing:</strong>
+                            <ul class="list-disc list-inside text-gray-600">
+                                <li><strong>Early Bird:</strong>
+                                    <ul class="ml-4">
+                                        <li>Indian Delegates: ₹7500</li>
+                                        <li>International Delegates: $150</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Regular:</strong>
+                                    <ul class="ml-4">
+                                        <li>Indian Delegates: ₹8000</li>
+                                        <li>International Delegates: $200</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </p>
+                </AccordionContent>
+            </AccordionPanel>
+            <AccordionPanel value="2">
+                <AccordionHeader>IEEE Professional Member</AccordionHeader>
+                <AccordionContent>
+                    <p class="m-0">
+                        <p class="text-gray-600 mb-4">This category is for professionals who are members of IEEE. It provides a discounted rate for conference registration compared to non-members.</p>
+                        <div>
+                            <strong class="text-gray-800">Pricing:</strong>
+                            <ul class="list-disc list-inside text-gray-600">
+                                <li><strong>Early Bird:</strong>
+                                    <ul class="ml-4">
+                                        <li>Indian Delegates: ₹6000</li>
+                                        <li>International Delegates: $100</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Regular:</strong>
+                                    <ul class="ml-4">
+                                        <li>Indian Delegates: ₹6400</li>
+                                        <li>International Delegates: $125</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </p>
+                </AccordionContent>
+            </AccordionPanel>
+            <AccordionPanel value="3">
+                <AccordionHeader>Non-IEEE Professional Member</AccordionHeader>
+                <AccordionContent>
+                    <p class="m-0">
+                        <p class="text-gray-600 mb-4">This category is intended for professionals who are not affiliated with IEEE. These individuals can attend the conference by paying a higher fee compared to IEEE members.</p>
+                        <div>
+                            <strong class="text-gray-800">Pricing:</strong>
+                            <ul class="list-disc list-inside text-gray-600">
+                                <li><strong>Early Bird:</strong>
+                                    <ul class="ml-4">
+                                        <li>Indian Delegates: ₹7500</li>
+                                        <li>International Delegates: $150</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Regular:</strong>
+                                    <ul class="ml-4">
+                                        <li>Indian Delegates: ₹8000</li>
+                                        <li>International Delegates: $200</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </p>
+                </AccordionContent>
+            </AccordionPanel>
+            <AccordionPanel value="4">
+                <AccordionHeader>Conference with Pre-Conference workshop - IEEE Member</AccordionHeader>
+                <AccordionContent>
+                    <p class="m-0">
+                        <p class="text-gray-600 mb-4">This category offers a package for IEEE members to attend both the main conference and a pre-conference workshop. This provides an additional learning opportunity before the main event.</p>
+                        <div>
+                            <strong class="text-gray-800">Pricing:</strong>
+                            <ul class="list-disc list-inside text-gray-600">
+                                <li><strong>Early Bird:</strong>
+                                    <ul class="ml-4">
+                                        <li>Indian Delegates: ₹9500</li>
+                                        <li>International Delegates: $250</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Regular:</strong>
+                                    <ul class="ml-4">
+                                        <li>Indian Delegates: ₹10000</li>
+                                        <li>International Delegates: $300</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </p>
+                </AccordionContent>
+            </AccordionPanel>
+            <AccordionPanel value="5">
+                <AccordionHeader>Conference with Pre-Conference workshop - Non-IEEE Member</AccordionHeader>
+                <AccordionContent>
+                    <p class="m-0">
+                        <p class="text-gray-600 mb-4">This package is for non-IEEE members who wish to attend both the main conference and a pre-conference workshop. It includes access to additional educational content before the conference.</p>
+                        <div >
+                            <strong class="text-gray-800">Pricing:</strong>
+                            <ul class="list-disc list-inside text-gray-600">
+                                <li><strong>Early Bird:</strong>
+                                    <ul class="ml-4">
+                                        <li>Indian Delegates: ₹12000</li>
+                                        <li>International Delegates: $350</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Regular:</strong>
+                                    <ul class="ml-4">
+                                        <li>Indian Delegates: ₹12500</li>
+                                        <li>International Delegates: $400</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </p>
+                </AccordionContent>
+            </AccordionPanel>
+            <AccordionPanel value="6">
+                <AccordionHeader>Only Attending</AccordionHeader>
+                <AccordionContent>
+                    <p class="m-0">
+                        <p class="text-gray-600 mb-4">This category is for attendees who only wish to attend the conference without participating in any pre-conference workshops. It is suitable for individuals seeking a more straightforward attendance option.</p>
+                        <div >
+                            <strong class="text-gray-800">Pricing:</strong>
+                            <ul class="list-disc list-inside text-gray-600">
+                                <li><strong>Early Bird:</strong>
+                                    <ul class="ml-4">
+                                        <li>Indian Delegates: ₹2500</li>
+                                        <li>International Delegates: $50</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Regular:</strong>
+                                    <ul class="ml-4">
+                                        <li>Indian Delegates: ₹3000</li>
+                                        <li>International Delegates: $75</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </p>
+                </AccordionContent>
+            </AccordionPanel>
+        </Accordion>
+    </div>
+    <div class="grid grid-rows-2 my-4">
+        <p class="text-center font-extralight pb-3">To register, you must first complete this form. After submitting the form, you will be forwarded to the IEEE website to complete the registration process.</p>
+        <div class="flex w-full justify-center">
+            <button type="button" class="flex-none rounded-md bg-blue-900 px-3.5 xl:py-2.5 py-1 text-sm font-semibold text-white shadow-sm hover:bg-gray-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-900" @click="visible=true">Register</button>
+        </div>
+    </div>
+    <Dialog v-model:visible="visible" modal header="Register For ICCIII MASTER" :style="{ width: '25rem' }">
+        <span class="text-surface-500 dark:text-surface-400 block mb-8">We'll never share your email or phone number with anyone else.</span>
+        <div class="flex items-center gap-4 mb-4">
+            <label for="name" class="font-light w-24">Name</label>
+            <InputText id="name" class="flex-auto" autocomplete="off" />
+        </div>
+        <div class="flex items-center gap-4 mb-8">
+            <label for="institution" class="font-light w-24">Institution</label>
+            <InputText id="institution" class="flex-auto" autocomplete="off" />
+        </div>
+        <div class="flex items-center gap-4 mb-8">
+            <label class="font-light">Pre-conference workshop</label>
+            <Checkbox id="preconferenceworkshop" v-model="checked" :binary="true" />
+        </div>
+        <div class="flex items-center gap-4 mb-8">
+            <label for="pn" class="font-light w-24">Phone Number</label>
+            <InputText id="pn" class="flex-auto" autocomplete="off" />
+        </div>
+        <div class="flex items-center gap-4 mb-8">
+            <label for="email" class="font-light w-24">Email</label>
+            <InputText id="email" class="flex-auto" autocomplete="off" />
+        </div>
+        <div class="flex justify-end gap-2">
+            <Button type="button" label="Cancel" severity="secondary" @click="visible = false"></Button>
+            <Button type="button" label="Save" @click="visible = false"></Button>
+        </div>
+    </Dialog>
 </template>
 
 <script setup>
+    import Dialog from 'primevue/dialog';
+    import InputText from 'primevue/inputtext';
+    import Button from 'primevue/button';
+    import Checkbox from 'primevue/checkbox';
+    import { ref } from 'vue'
+    import Accordion from 'primevue/accordion';
+    import AccordionPanel from 'primevue/accordionpanel';
+    import AccordionHeader from 'primevue/accordionheader';
+    import AccordionContent from 'primevue/accordioncontent';
 
+    const visible = ref()
 </script>
