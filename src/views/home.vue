@@ -77,25 +77,45 @@
         
     </div>
 
-    <div class="grid xl:grid-cols-3 xl:grid-rows-1 grid-rows-3 grid-cols-1 w-full gap-3 mb-5 xl:px-20 px-10">
+    <h1 class="text-4xl text-center font-bold p-4">Our Themes</h1>
+    <div class="grid xl:grid-cols-4 xl:grid-rows-1 grid-rows-4 grid-cols-1 w-full gap-3 pb-5 mb-5 xl:px-20 px-10">
         <div class="w-full rounded-md shadow-lg p-4 border-2 border-gray-300 hover:shadow-xl hover:border-gray-400">
-            <h1 class="text-lg font-bold">Our Theme</h1>
-            <p class="text-justify">Sustainable Computing Horizons: <br>Bridging Intelligence, Innovations, and Analytics for Global Future</p>
+            <h1 class="text-lg font-bold text-center">Sustainable Computing Horizons</h1>
+            <div class="font-thin text-center w-full flex justify-center p-4">
+                <GlobeAsiaAustraliaIcon class="h-10 w-10"/>
+            </div>
         </div>
         <div class="w-full rounded-md shadow-lg p-4 border-2 border-gray-300 hover:shadow-xl hover:border-gray-400">
-            <h1 class="text-lg font-bold">Conference Type</h1>
-            <p class="text-justify">International with Scopus Indexing</p>
+            <h1 class="text-lg font-bold text-center">Bridging Intelligence</h1>
+            <div class="font-thin text-center w-full flex justify-center p-4">
+                <AcademicCapIcon class="h-10 w-10"/>
+            </div>
         </div>
         <div class="w-full rounded-md shadow-lg p-4 border-2 border-gray-300 hover:shadow-xl hover:border-gray-400">
-            <h1 class="text-lg font-bold">Target Participats</h1>
-            <p class="text-justify">Academia, Industry, Research Communities</p>
+            <h1 class="text-lg font-bold text-center">Innovations</h1>
+            <div class="font-thin text-center w-full flex justify-center p-4">
+                <BoltIcon class="h-10 w-10"/>
+            </div>
         </div>
+        <div class="w-full rounded-md shadow-lg p-4 border-2 border-gray-300 hover:shadow-xl hover:border-gray-400">
+            <h1 class="text-xl font-bold text-center">Analytics for Global Future</h1>
+            <div class="font-thin text-center w-full flex justify-center p-4">
+                <ChartBarIcon class="h-10 w-10"/>
+            </div>
+        </div>
+    </div>
+
+    <h1 class="text-4xl text-center font-bold p-4 hidden xl:block">Technical Co-Sponsorship</h1>
+    <h1 class="text-4xl text-center font-bold p-4 xl:hidden block">Technical<br>Co-Sponsorship</h1>
+    <div class="w-full pb-5 flex justify-center">
+        <img :src="studentchapter" class="h-150 w-150 rounded-md shadow-lg border-2 border-gray-300 p-4 hover:border-gray-400 cursor-pointer" alt="">
     </div>
 </template>
 
 <script setup>
 import { ref } from 'vue'
 import Timeline from 'primevue/timeline';
+import { GlobeAsiaAustraliaIcon, AcademicCapIcon, BoltIcon, ChartBarIcon } from '@heroicons/vue/24/outline';
 
 const events = ref([
     { status: 'Pre-Conference Workshop - Day 1', date: '11/09/2025', done: true},
@@ -105,7 +125,9 @@ const events = ref([
 ]);
 const video = './img/ieeevid.mp4'
 const logo = './img/logo.png'
+const studentchapter = './img/studentchapter.jpeg'
 
 const green = "#008000"
 const orange = "#FFA500"
+
 </script>
