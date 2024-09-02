@@ -257,44 +257,92 @@
         </div>
     </div>
     <Dialog v-model:visible="visible" modal header="Register For ICCIII MASTER" :style="{ width: '25rem' }">
-        <span class="text-surface-500 dark:text-surface-400 block mb-8">We'll never share your email or phone number with anyone else.</span>
-        <div class="flex items-center gap-4 mb-4">
-            <label for="name" class="font-light w-24">Name</label>
-            <InputText id="name" class="flex-auto" autocomplete="off" />
+        <div v-if="!loading">
+            <span class="text-surface-500 dark:text-surface-400 block mb-8">We'll never share your email or phone number with anyone else.</span>
+            <div class="flex items-center gap-4 mb-4">
+                <label for="name" class="font-light w-24">Name</label>
+                <InputText v-model="name" id="name" class="flex-auto" autocomplete="off" />
+            </div>
+            <div class="flex items-center gap-4 mb-8">
+                <label for="institution" class="font-light w-24">Institution</label>
+                <InputText v-model="ins" id="institution" class="flex-auto" autocomplete="off" />
+            </div>
+            <div class="flex items-center gap-4 mb-8">
+                <label class="font-light">Pre-conference workshop</label>
+                <Checkbox v-model="pcw" id="preconferenceworkshop" :binary="true" />
+            </div>
+            <div class="flex items-center gap-4 mb-8">
+                <label for="pn" class="font-light w-24">Phone Number</label>
+                <InputText id="pn" v-model="pn" class="flex-auto" autocomplete="off" />
+            </div>
+            <div class="flex items-center gap-4 mb-8">
+                <label for="email" class="font-light w-24">Email</label>
+                <InputText id="email" v-model="email" class="flex-auto" autocomplete="off" />
+            </div>
+            <div class="flex justify-end gap-2">
+                <button label="Cancel" @click="visible = false" class="bg-red-600 p-2 m-2 text-white rounded-lg">Cancel</button>
+                <button label="Register" @click="register()" class="bg-blue-900 p-2 m-2 text-white rounded-lg">Register</button>
+            </div>
         </div>
-        <div class="flex items-center gap-4 mb-8">
-            <label for="institution" class="font-light w-24">Institution</label>
-            <InputText id="institution" class="flex-auto" autocomplete="off" />
-        </div>
-        <div class="flex items-center gap-4 mb-8">
-            <label class="font-light">Pre-conference workshop</label>
-            <Checkbox id="preconferenceworkshop" v-model="checked" :binary="true" />
-        </div>
-        <div class="flex items-center gap-4 mb-8">
-            <label for="pn" class="font-light w-24">Phone Number</label>
-            <InputText id="pn" class="flex-auto" autocomplete="off" />
-        </div>
-        <div class="flex items-center gap-4 mb-8">
-            <label for="email" class="font-light w-24">Email</label>
-            <InputText id="email" class="flex-auto" autocomplete="off" />
-        </div>
-        <div class="flex justify-end gap-2">
-            <Button type="button" label="Cancel" severity="secondary" @click="visible = false"></Button>
-            <Button type="button" label="Save" @click="visible = false"></Button>
+        <div v-else class="bg-white p-4 rounded-lg w-full h-[350px] flex justify-center items-center">
+            <ProgressSpinner></ProgressSpinner>
         </div>
     </Dialog>
+    <Toast/>
 </template>
 
 <script setup>
     import Dialog from 'primevue/dialog';
     import InputText from 'primevue/inputtext';
-    import Button from 'primevue/button';
     import Checkbox from 'primevue/checkbox';
     import { ref } from 'vue'
     import Accordion from 'primevue/accordion';
     import AccordionPanel from 'primevue/accordionpanel';
     import AccordionHeader from 'primevue/accordionheader';
     import AccordionContent from 'primevue/accordioncontent';
+    import ProgressSpinner from 'primevue/progressspinner';
+    import axios from 'axios'
+    import { useToast } from 'primevue/usetoast';
+    import Toast from 'primevue/toast';
+
+    const toast = useToast()
 
     const visible = ref()
+    const loading = ref(false)
+
+    const name = ref()
+    const ins = ref()
+    const pcw = ref()
+    const pn = ref()
+    const email = ref()
+
+    function register(){
+        loading.value = true
+        const formData = new FormData()
+        formData.append('Name', name.value); 
+        formData.append('Institution', ins.value); 
+        formData.append('Pre_Conference_Workshop', pcw.value == true?"on":"off"); 
+        formData.append('Phone_Number', pn.value); 
+        formData.append('Email', email.value); 
+
+        axios.post("https://script.google.com/macros/s/AKfycbz_9-yIkZnwP2D5VYlKbHwLMOj1i7kqAXIwtIB5bdt61Ej3GAKVpb2yEVoWa7Hk0S8v/exec", formData).then(res => {
+            if (res.data.result == "success"){
+                toast.add({ severity: 'success', summary: 'Success', detail: 'Thank You For Your Interest', life: 3000 });
+                loading.value = false;
+                visible.value = false;
+                window.location.href = 'https://www.ieee.org/';
+            }
+        }).catch(err => {
+            console.log(err)
+            toast.add({ severity: 'error', summary: 'Error', detail: 'Please Try Again Later', life: 3000 });
+            loading.value = false;
+            visible.value = false;
+        })
+
+        name.value = ""
+        ins.value = ""
+        pcw.value = null
+        pn.value = ""
+        email.value = ""
+    }
 </script>
