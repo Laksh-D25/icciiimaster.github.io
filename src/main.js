@@ -13,7 +13,6 @@ import app from './App.vue';
 //imports
 import home from './views/home.vue'
 import about from './views/about.vue'
-import forauth from './views/forauth.vue'
 import schedule from './views/schedule.vue'
 import speakers from './views/speakers.vue'
 import workshop from './views/workshop.vue'
@@ -25,16 +24,16 @@ import CRC from './views/crc.vue'
 import e404 from './views/e404.vue'
 
 const routes = [
-    { path: '/', component: home },
-    { path: '/about', component: about },
-    { path: '/callforpaper', component: callforpaper },
-    { path: '/crc', component: CRC },
-    { path: '/schedule', component: schedule },
-    { path: '/speakers', component: speakers },
-    { path: '/workshop', component: workshop },
-    { path: '/registration', component: registration },
-    { path: '/contact', component: contactus },
-    { path: '/committee/:id', component: committee, props: true},
+    { path: '/icciiimaster.github.io', component: home },
+    { path: '/icciiimaster.github.io/about', component: about },
+    { path: '/icciiimaster.github.io/callforpaper', component: callforpaper },
+    { path: '/icciiimaster.github.io/crc', component: CRC },
+    { path: '/icciiimaster.github.io/schedule', component: schedule },
+    { path: '/icciiimaster.github.io/speakers', component: speakers },
+    { path: '/icciiimaster.github.io/workshop', component: workshop },
+    { path: '/icciiimaster.github.io/registration', component: registration },
+    { path: '/icciiimaster.github.io/contact', component: contactus },
+    { path: '/icciiimaster.github.io/committee/:id', component: committee, props: true},
     {path: '/:pathMatch(.*)*', component: e404},
 ];
 
