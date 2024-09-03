@@ -13,8 +13,8 @@
             </div>
             <div class="flex flex-1 items-center xl:justify-between">
                 <div class="flex flex-shrink-0 items-center">
-                    <img class="xl:h-10 lg:h-6 h-8 w-auto mr-7" src="/img/christ.png" alt="CHRIST LOGO" />
-                    <img class="xl:h-9 lg:h-5 h-7 w-auto" src="/img/ieee.png" alt="IEEE LOGO" />
+                    <a href="https://christuniversity.in"><img class="xl:h-10 lg:h-6 h-8 w-auto mr-7" src="/img/christ.png" alt="CHRIST LOGO" /></a>
+                    <a href="https://www.ieee.org"><img class="xl:h-9 lg:h-5 h-7 w-auto" src="/img/ieee.png" alt="IEEE LOGO" /></a>
                 </div>
                 <div class="hidden sm:ml-6 xl:flex sm:space-x-8">
                     <div v-for="navs in navigation" class="inline-flex items-center justify-center">
@@ -92,7 +92,8 @@ const navigation = [
         { name: 'Technical Program Committee', href: '/committee/14', type: 'link' },
     ]},
     { name: 'For Authors', href: '/forauthors', type: 'dropdown', children: [
-        { name: 'CRC', href: '/', type: 'link' },
+        { name: 'Call for paper', href: '/callforpaper', type: 'link' },
+        { name: 'CRC', href: '/crc', type: 'link' },
     ] },
     { name: 'Schedule', href: '/schedule', type: 'link' },
     { name: 'Speakers', href: '/speakers', type: 'link' },

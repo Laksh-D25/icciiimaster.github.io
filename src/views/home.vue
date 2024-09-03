@@ -11,12 +11,12 @@
                 
             }" />
         </div>
-        <div class="flex-cols text-justify px-3 items-center xl:text-2xl text-xs font-bold xl:col-span-2 col-span-1 row-span-1 xl:mt-[25%]">
+        <div class="flex-cols text-justify px-3 items-center xl:text-4xl text-xs font-bold xl:col-span-2 col-span-1 row-span-1 xl:mt-[25%]">
             <p class="items-center w-full justify-center hidden xl:flex">
-                International Conference on Computational Innovations, Intelligence, Information Management, Analytics, Sustainable Technologies, Engineering and Research - 
+                International Conference on Computational Innovations, Intelligence, Information Management, Analytics, Sustainable Technologies, Engineering and Research
             </p>
             <br>
-            <p class="items-start w-full text-center text-lg -mt-30 xl:mt-0">ICCIII MASTER 2025</p>
+            <p class="items-start w-full text-center xl:text-2xl text-lg -mt-30 xl:mt-0">ICCIII MASTER 2025</p>
         </div>
     </div>
     <div class="relative mb-5 w-full -z-100 bg-black/30">

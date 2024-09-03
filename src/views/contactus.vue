@@ -1,6 +1,6 @@
 <template>
     <h1 class="text-3xl sm:text-5xl text-center font-bold my-10">
-           Contact Us
+        Contact Us
     </h1>
     <div class="grid xl:grid-cols-2 grid-rows-2 xl:grid-rows-none m-5">
         <div class="xl:mx-5">

@@ -27,10 +27,8 @@ import e404 from './views/e404.vue'
 const routes = [
     { path: '/', component: home },
     { path: '/about', component: about },
-    { path: '/authors', component: forauth, children: [
-        { path: 'callforpaper', component: callforpaper },
-        { path: 'CRC', component: CRC }
-    ]},
+    { path: '/callforpaper', component: callforpaper },
+    { path: '/crc', component: CRC },
     { path: '/schedule', component: schedule },
     { path: '/speakers', component: speakers },
     { path: '/workshop', component: workshop },
