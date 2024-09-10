@@ -13,8 +13,8 @@
             </div>
             <div class="flex flex-1 items-center xl:justify-between">
                 <div class="flex flex-shrink-0 items-center">
-                    <a href="https://christuniversity.in"><img class="xl:h-10 lg:h-6 h-8 w-auto mr-7" src="/img/christ.png" alt="CHRIST LOGO" /></a>
-                    <a href="https://www.ieee.org"><img class="xl:h-9 lg:h-5 h-7 w-auto" src="/img/ieee.png" alt="IEEE LOGO" /></a>
+                    <a href="https://christuniversity.in"><img class="xl:h-10 lg:h-6 h-8 w-auto mr-7" :src="christpng" alt="CHRIST LOGO" /></a>
+                    <a href="https://www.ieee.org"><img class="xl:h-9 lg:h-5 h-7 w-auto" :src="ieeepng" alt="IEEE LOGO" /></a>
                 </div>
                 <div class="hidden sm:ml-6 xl:flex sm:space-x-8">
                     <div v-for="navs in navigation" class="inline-flex items-center justify-center">
@@ -72,33 +72,33 @@ const christpng = './img/christ.png'
 const ieeepng =  './img/ieee.png'
 
 const navigation = [
-    { name: 'Home', href: '/', type: 'link' },
-    { name: 'About', href: '/about', type: 'link' },
-    { name: 'Committee', href: '/committee', type: 'dropdown', children: [
-        { name: 'Advisory Committee', href: '/committee/0', type: 'link' },
-        { name: 'Chief Patrons', href: '/committee/1', type: 'link' },
-        { name: 'Finance Committee', href: '/committee/2', type: 'link' },
-        { name: 'General Chairs', href: '/committee/3', type: 'link' },
-        { name: 'Honorary Chairs', href: '/committee/4', type: 'link' },
-        { name: 'Logistics And Hospitality', href: '/committee/5', type: 'link' },
-        { name: 'Organizing Committee', href: '/committee/6', type: 'link' },
-        { name: 'Patrons', href: '/committee/7', type: 'link' },
-        { name: 'Publications Committee', href: 'committee/8', type: 'link' },
-        { name: 'Publicity Committee', href: '/committee/9', type: 'link' },
-        { name: 'Sessions Management', href: '/committee/10', type: 'link' },
-        { name: 'Student Branch', href: '/committee/11', type: 'link' },
-        { name: 'Student Chapter', href: '/committee/12', type: 'link' },
-        { name: 'Student Volunteers', href: '/committee/13', type: 'link' },
-        { name: 'Technical Program Committee', href: '/committee/14', type: 'link' },
+    { name: 'Home', href: '/icciiimaster.github.io/', type: 'link' },
+    { name: 'About', href: '/icciiimaster.github.io/about', type: 'link' },
+    { name: 'Committee', href: '/icciiimaster.github.io/committee', type: 'dropdown', children: [
+        { name: 'Advisory Committee', href: '/icciiimaster.github.io/committee/0', type: 'link' },
+        { name: 'Chief Patrons', href: '/icciiimaster.github.io/committee/1', type: 'link' },
+        { name: 'Finance Committee', href: '/icciiimaster.github.io/committee/2', type: 'link' },
+        { name: 'General Chairs', href: '/icciiimaster.github.io/committee/3', type: 'link' },
+        { name: 'Honorary Chairs', href: '/icciiimaster.github.io/committee/4', type: 'link' },
+        { name: 'Logistics And Hospitality', href: '/icciiimaster.github.io/committee/5', type: 'link' },
+        { name: 'Organizing Committee', href: '/icciiimaster.github.io/committee/6', type: 'link' },
+        { name: 'Patrons', href: '/icciiimaster.github.io/committee/7', type: 'link' },
+        { name: 'Publications Committee', href: '/icciiimaster.github.io/committee/8', type: 'link' },
+        { name: 'Publicity Committee', href: '/icciiimaster.github.io/committee/9', type: 'link' },
+        { name: 'Sessions Management', href: '/icciiimaster.github.io/committee/10', type: 'link' },
+        { name: 'Student Branch', href: '/icciiimaster.github.io/committee/11', type: 'link' },
+        { name: 'Student Chapter', href: '/icciiimaster.github.io/committee/12', type: 'link' },
+        { name: 'Student Volunteers', href: '/icciiimaster.github.io/committee/13', type: 'link' },
+        { name: 'Technical Program Committee', href: '/icciiimaster.github.io/committee/14', type: 'link' },
     ]},
     { name: 'For Authors', href: '/forauthors', type: 'dropdown', children: [
-        { name: 'Call for paper', href: '/callforpaper', type: 'link' },
-        { name: 'CRC', href: '/crc', type: 'link' },
+        { name: 'Call for paper', href: '/icciiimaster.github.io/callforpaper', type: 'link' },
+        { name: 'CRC', href: '/icciiimaster.github.io/crc', type: 'link' },
     ] },
-    { name: 'Schedule', href: '/schedule', type: 'link' },
-    { name: 'Speakers', href: '/speakers', type: 'link' },
-    { name: 'Registration', href: '/registration', type: 'link' },
-    { name: 'Workshop', href: '/workshop', type: 'link' },
-    { name: 'Contact', href: '/contact', type: 'link' },
+    { name: 'Schedule', href: '/icciiimaster.github.io/schedule', type: 'link' },
+    { name: 'Speakers', href: '/icciiimaster.github.io/speakers', type: 'link' },
+    { name: 'Registration', href: '/icciiimaster.github.io/registration', type: 'link' },
+    { name: 'Workshop', href: '/icciiimaster.github.io/workshop', type: 'link' },
+    { name: 'Contact', href: '/icciiimaster.github.io/contact', type: 'link' },
 ]
 </script>

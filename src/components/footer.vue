@@ -72,17 +72,17 @@
       {
         name: 'Linkedin',
         href: '#',
-        link: '/img/linkedin.svg',
+        link: './img/linkedin.svg',
       },
       {
         name: 'Facebook',
         href: '#',
-        link: '/img/facebook.svg',
+        link: './img/facebook.svg',
       },
       {
         name: 'WhatsApp',
         href: '#',
-        link: '/img/whatsapp.svg',
+        link: './img/whatsapp.svg',
       }
     ],
   }

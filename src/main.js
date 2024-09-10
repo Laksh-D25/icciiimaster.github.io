@@ -22,9 +22,10 @@ import committee from './views/committee.vue'
 import callforpaper from './views/callforpaper.vue'
 import CRC from './views/crc.vue'
 import e404 from './views/e404.vue'
+import landing from './views/landing.vue'
 
 const routes = [
-    { path: '/icciiimaster.github.io', component: home },
+    { path: '/icciiimaster.github.io/', component: home },
     { path: '/icciiimaster.github.io/about', component: about },
     { path: '/icciiimaster.github.io/callforpaper', component: callforpaper },
     { path: '/icciiimaster.github.io/crc', component: CRC },
@@ -33,6 +34,7 @@ const routes = [
     { path: '/icciiimaster.github.io/workshop', component: workshop },
     { path: '/icciiimaster.github.io/registration', component: registration },
     { path: '/icciiimaster.github.io/contact', component: contactus },
+    { path: '/icciiimaster.github.io/landing', component: landing },
     { path: '/icciiimaster.github.io/committee/:id', component: committee, props: true},
     {path: '/:pathMatch(.*)*', component: e404},
 ];
